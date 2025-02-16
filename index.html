@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+  <meta charset="utf-8"> 
+  <title>Zhoubin Kou</title> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <meta name="description" content="Personal Website"> 
+  <meta name="author" content="Zhoubin Kou"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.svg">
+  <!-- Le styles --> 
+  <link href="css/bootstrap2.min.css" rel="stylesheet"> 
+  <link href="css/style-oct23.css" rel="stylesheet"> 
+  <link href="css/main.css" rel="stylesheet"> 
+  <!-- Le scripts --> 
+  <script src="js/jquery.min.js"></script> 
+ </head> 
+ <body style="text-align: justify;"> 
+  <div id="fullBody"> 
+   <div class="container" id="inner"> 
+    <!--  header --> 
+    <div class="row mt-5"> 
+     <div class="col-xs-6 col-sm-3"> 
+      <a class="thumbnail profilePicture"> <img src="images/profile.jpg"  /> </a> 
+     </div> 
+     <div class="col-xs-12 col-sm-9"> 
+      <h1>Zhoubin Kou</h1> 
+      <p> </p>
+      <a href="https://github.com/Kerzb">Github</a>
+            &nbsp;/&nbsp;
+            <a href="https://scholar.google.com/citations?hl=zh-CN&user=tpJi2zUAAAAJ">G. Scholar</a>
+            &nbsp;/&nbsp;
+            <a href="https://www.linkedin.com/in/zhoubin-kou-8a1015286/">LinkedIn</a>
+            &nbsp;/&nbsp;
+            <a href="https://mailhide.io/e/Pzkp0z9z"
+              onclick="popup=window.open('https://mailhide.io/e/Pzkp0z9z','mailhidepopup','width=580,height=635'); return false;">E-mail</a>
+      <hr>
+      <!-- <h3> About me</h2> -->
+      <p></p> 
+      <p> I am currently a first-year PhD student in the <a href="https://engineering.virginia.edu/department/electrical-and-computer-engineering">Department of Electrical and Computer Engineering</a> at <a href="https://www.virginia.edu/">University of Virginia</a> , where I am fortunate to be advised by Professors <a href="https://cshen317.github.io/">Cong Shen</a>. Before this, I earned my B.E. degree in Information Engineering from <a href="https://www.seu.edu.cn/">Southeast University</a> in 2021 and a M.E. degree in Electronic Information from <a href="https://www.ee.tsinghua.edu.cn/">Tsinghua University</a> in 2024.</p> 
+      
+        <!-- <a href="https://github.com/Kerzb">Github</a>
+            &nbsp;/&nbsp;
+            <a href="https://scholar.google.com/citations?hl=zh-CN&user=tpJi2zUAAAAJ">G. Scholar</a>
+            &nbsp;/&nbsp;
+            <a href="https://www.linkedin.com/in/zhoubin-kou-8a1015286/">LinkedIn</a>
+            &nbsp;/&nbsp;
+            <a href="https://mailhide.io/e/Pzkp0z9z"
+              onclick="popup=window.open('https://mailhide.io/e/Pzkp0z9z','mailhidepopup','width=580,height=635'); return false;">E-mail</a><br> -->
+        <!-- <img class="sidebarimg" src="images/home.png">Office:  Where are you？ <br> 
+        <img class="sidebarimg" src="images/mail.png">Email:   <br> 
+        <span class="" aria-hidden="true"></span>
+        <img class="sidebarimg" src="images/QQ.png"> QQ: XXXXXXXX<br> 
+        <img class="sidebarimg" src="images/Github.png"> Github: <a href="https://github.com/BeihangHuiye">BeihangHuiye</a> <br>  -->
+      
+     </div> 
+     <div class="col-xs-12" style="margin-top:20px"> 
+      <h2>News</h2>
+      <div class="well"> 
+         <ul>
+          <li>[2025.01]  Thrilled to join UVA and embark on my PhD journey in Charlottesville!</li>
+          <!-- <li>[2024.06]</li> -->
+        </ul>
+       </div>       
+    </div> 
+
+<!-- Selected Publication -->
+    <div class="col-xs-12" style="margin-top:0px"> 
+      <h2>Selected Publication [<a href="#">Lists</a>]</h2>
+      <div class="well"> 
+        <div id="papersContainer" class="papers-container">
+
+          <script>
+            // 使用 Fetch API 读取配置文件
+            fetch('config/Papers.json')
+              .then(response => response.json())
+              .then(data => generatePapers(data));
+        
+            function generatePapers(papers) {
+              const papersContainer = document.getElementById('papersContainer');
+        
+              papers.forEach(paper => {
+                const paperDiv = document.createElement('div');
+                paperDiv.className = 'col-sm-12 col-md-12 ';
+                // paperDiv.style.height = '100%';
+        
+                const paperContent = `
+                  <div>
+                    <a class="pull-left hexagonContainer" href="${paper.pdfLink || '#'}">
+                      <img class="paperImage hexagonImage" src="${paper.imageSrc}">
+                    </a>
+                    <div class="media-body paperBody">
+                      <h4 class="media-heading">
+                        <a href="${paper.pdfLink || '#'}">${paper.title}</a>
+                      </h4>
+                      <p>${paper.author}</p>
+                      <p class="conference"><i>${paper.conference}</i></p>
+                    </div>
+                  </div>
+                `;
+        
+                paperDiv.innerHTML = paperContent;
+                papersContainer.appendChild(paperDiv);
+              });
+            }
+          </script>
+        
+          </div>
+       </div>       
+    </div> 
+    
+    <!-- <hr>  -->
+
+
+    <div class="col-xs-12" style="margin-top:0px"> 
+      <h2>Academic Services</h2>
+      <div class="well"> 
+        <ul>
+          <li>
+            Journal Reviewer: 
+            <ul>
+              <li>
+                IEEE Internet of Things Journal
+              </li>
+              <li>
+                IEEE Transactions on Machine Learning in Communications and Networking
+              </li>
+            </ul>
+          </li>
+        </ul>
+       </div>       
+    </div> 
+
+    <div class="col-xs-12" style="margin-top:0px"> 
+      <h2>Misc.</h2>
+      <div class="well"> 
+        <ul>
+          <li>
+            Outside of research, I loving running 🏃 and hiking 🧗. 
+            <br>
+            Feel free to reach out if we share similar hobbies and are both located in Charlottesville!
+          </li>
+        </ul>
+       </div>       
+    </div> 
+
+    <!-- Projects 
+    <div class="row"> 
+      <div class="col-xs-12"> 
+       <h2>Recent Projects </h2> 
+      </div> 
+     </div> 
+
+  <div id="projectContainer">
+
+  <script>
+    // 使用 Fetch API 读取配置文件
+    fetch('config/Projects.json')
+      .then(response => response.json())
+      .then(data => generateProjects(data));
+
+    function generateProjects(projects) {
+      const projectContainer = document.getElementById('projectContainer');
+
+      projects.forEach(project => {
+        const projectDiv = document.createElement('div');
+        projectDiv.className = 'paper-box';
+
+        const imageDiv = document.createElement('div');
+        imageDiv.className = 'paper-box-image';
+
+        const badgeDiv = document.createElement('div');
+        badgeDiv.className = 'badge';
+        badgeDiv.textContent = `${project.dateRange} ${project.status}`;
+        
+        const img = document.createElement('img');
+        img.src = project.imageSrc;
+        img.alt = 'sym';
+        
+
+        imageDiv.appendChild(badgeDiv);
+        imageDiv.appendChild(img);
+
+        const textDiv = document.createElement('div');
+        textDiv.className = 'paper-box-text';
+        const p = document.createElement('p');
+        p.textContent = project.text;
+        textDiv.appendChild(p);
+
+        projectDiv.appendChild(imageDiv);
+        projectDiv.appendChild(textDiv);
+
+        projectContainer.appendChild(projectDiv);
+      });
+    }
+  </script>
+
+</div> -->
+    <!-- papers --> 
+    <!-- <div class="row"> 
+     <div class="col-xs-12"> 
+      <h2>Recent Achievement</h2> ≠
+     </div> 
+    </div> 
+    <p></p>
+
+    <h3>Papers</h3>  
+
+    <br>
+  <div id="papersContainer" class="papers-container">
+
+  <script>
+    // 使用 Fetch API 读取配置文件
+    fetch('config/Papers.json')
+      .then(response => response.json())
+      .then(data => generatePapers(data));
+
+    function generatePapers(papers) {
+      const papersContainer = document.getElementById('papersContainer');
+
+      papers.forEach(paper => {
+        const paperDiv = document.createElement('div');
+        paperDiv.className = 'col-sm-12 col-md-12 mb-4';
+        // paperDiv.style.height = '100%';
+
+        const paperContent = `
+          <div>
+            <a class="pull-left hexagonContainer" href="${paper.pdfLink || '#'}">
+              <img class="paperImage hexagonImage" src="${paper.imageSrc}">
+            </a>
+            <div class="media-body paperBody">
+              <h4 class="media-heading">
+                <a href="${paper.pdfLink || '#'}">${paper.title}</a>
+              </h4>
+              <p>${paper.author}</p>
+              <p class="conference"><i>${paper.conference}</i></p>
+            </div>
+          </div>
+        `;
+
+        paperDiv.innerHTML = paperContent;
+        papersContainer.appendChild(paperDiv);
+      });
+    }
+  </script>
+
+  </div>
+  
+   -->
+  <!-- <br>
+  <h3>Software Copyright</h3>
+  <br>
+
+  <div id="softwareContainer" class="software-container"></div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <hr>
+    </div>
+  
+
+  <script>
+    // 使用 Fetch API 读取配置文件
+    fetch('config/SoftwareCopyright.json')
+      .then(response => response.json())
+      .then(data => generateSoftware(data));
+
+    function generateSoftware(software) {
+      const softwareContainer = document.getElementById('softwareContainer');
+
+      software.forEach(item => {
+        const softwareDiv = document.createElement('div');
+        softwareDiv.className = 'col-sm-12 col-md-12 mb-4';
+        // softwareDiv.style.height = '100%';
+
+        const softwareContent = `
+          <div>
+            <a class="pull-left hexagonContainer" href="${item.link}" target="_blank">
+              <img class="paperImage hexagonImage" src="${item.imageSrc}">
+            </a>
+            <div class="media-body paperBody">
+              <h4 class="media-heading">
+                <a href="${item.link}" target="_blank">${item.title}</a>
+              </h4>
+              <p>${item.developer}</p>
+              <p class="conference"><i>${item.registrationInfo}</i></p>
+            </div>
+          </div>
+        `;
+
+        softwareDiv.innerHTML = softwareContent;
+        softwareContainer.appendChild(softwareDiv);
+      });
+    }
+  </script>
+</div> -->
+
+
+<!-- <div class="col-xs-12" style="margin-top:20px"> 
+  <h2>Achievement</h2>
+  <div class="well"> 
+    <ul id="achievementsList">
+
+      <script>
+        // 使用 Fetch API 读取配置文件
+        fetch('config/Honors.json')
+          .then(response => response.json())
+          .then(data => generateAchievementsList(data));
+    
+        function generateAchievementsList(achievements) {
+          const achievementsList = document.getElementById('achievementsList');
+    
+          achievements.forEach(achievement => {
+            const listItem = document.createElement('li');
+            listItem.textContent = achievement;
+            achievementsList.appendChild(listItem);
+          });
+        }
+      </script>
+      </ul>
+    
+    </div>
+</div>  -->
+<div class="col-xs-12" style="margin-top:20px"> 
+  <div class="footer"> 
+    <!-- <p>  Friendly Links : <a href="https://sszxc.net/">Xuechao Zhang</a>   -->
+      <!-- &emsp;  <a href="https://www.52txr.cn/xueshu/">Xinrui Tao</a>   -->
+    </p>
+     <!-- <p class="pull-left"> © Created by Zhoubin Kou.</p>  -->
+     <!-- https://stanford.edu/~cpiech/bio/index.html -->
+    </div> 
+</div> 
+
+
+
+
+
+ 
+     
+ </body>
+</html>
